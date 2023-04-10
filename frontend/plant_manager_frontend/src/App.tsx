@@ -4,13 +4,18 @@ import Button from "./components/Button";
 import ListGroup from "./components/ListGroup";
 
 function App() {
- const [alertVisible, setAlertVisibility]= useState(false)
- 
+  const [alertVisible, setAlertVisibility] = useState(false);
 
   return (
     <div>
-      {alertVisible && <Alert>My Alert</Alert>}
-      <Button color="primary" children="My Button" onClick={ () => setAlertVisibility(!alertVisible)}/>
+      {alertVisible && (
+        <Alert onClose={() => setAlertVisibility(false)}>My Alert</Alert>
+      )}
+      <Button
+        color="primary"
+        children="My Button"
+        onClick={() => setAlertVisibility(true)}
+      />
     </div>
   );
 }
