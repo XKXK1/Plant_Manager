@@ -1,5 +1,5 @@
-import CardData from "./IData";
-import Item from "./Item";
+import CardData from "./Item/IData";
+import Item from "./Item/Item";
 
 const testData: CardData[] = [
   {
