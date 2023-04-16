@@ -1,5 +1,6 @@
 import CardData from "./Item/IData";
 import Item from "./Item/Item";
+import { Box, Grid } from "@mui/material";
 
 const testData: CardData[] = [
   {
@@ -26,14 +27,14 @@ const testData: CardData[] = [
   {
     id: 4,
     title: "Card 4",
-    description: "This is the second card.",
+    description: "This is the fourth card.",
     imageUrl:
       "https://www.ikea.com/de/de/images/products/dypsis-lutescens-pflanze-goldfruchtpalme__0653973_pe708202_s5.jpg?f=xl",
   },
   {
     id: 5,
     title: "Card 5",
-    description: "This is the third card.",
+    description: "This is the fifth card.",
     imageUrl:
       "https://www.ikea.com/de/de/images/products/dypsis-lutescens-pflanze-goldfruchtpalme__0653973_pe708202_s5.jpg?f=xl",
   },
@@ -41,15 +42,19 @@ const testData: CardData[] = [
 
 const Items = () => {
   return (
-    <div className="container">
-      <div className="row">
+    <>
+      <Grid
+        container
+        spacing={4}
+        sx={{ pt: 4, justifyContent: "center", alignItems: "center" }}
+      >
         {testData.map((item) => (
-          <div key={item.id} className="col-md-4">
+          <Grid item xs={10} md={6} lg={4} key={item.id}>
             <Item cardData={item}></Item>
-          </div>
+          </Grid>
         ))}
-      </div>
-    </div>
+      </Grid>
+    </>
   );
 };
 

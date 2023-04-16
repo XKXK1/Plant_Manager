@@ -1,11 +1,21 @@
-import Items from "./components/Items";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import PlantView from "./layout/PlantView/PlantView";
+import { About } from "./layout/About";
+import { HeaderNew } from "./layout/header/Header";
+import { Container } from "@mui/material";
+import { ContainerWrapper } from "./layout/Global.styles";
 
 function App() {
   return (
-    <>
-    <h1 className="text-center">🌻 My plant world 🌻</h1>
-    {<Items></Items>}
-    </>
+    <BrowserRouter>
+      <ContainerWrapper>
+        <HeaderNew/>
+        <Routes>
+          <Route path="/" element={<PlantView />} />
+          <Route path="about" element={<About />} />
+        </Routes>
+      </ContainerWrapper>
+    </BrowserRouter>
   );
 }
 
